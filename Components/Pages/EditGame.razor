@@ -1,0 +1,70 @@
+﻿@page "/editgame"
+@inject NavigationManager NavigationManager
+
+
+<PageTitle>New game</PageTitle>
+<h3>New Game</h3>
+
+@if (genres is null) 
+{
+    <p><em>Loading...</em></p>
+}
+else {
+        <div class="row">
+        <div class="col-md-4">
+                    <EditForm Model="@game" FormName="editgame" OnSubmit = "HandleSubmit">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Game</label>
+                        <InputText  class="form-control" @bind-Value="game.Name" id="name" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="genre" class="form-label">Genre</label>
+                        <InputSelect  class="form-select" @bind-Value="game.GenreId" id="genre">
+                        <option value="">Select a genre</option>
+                        @foreach (var genre in genres) 
+                        {
+                            <option value="@genre.Id">@genre.Name</option>
+                        }
+                        </InputSelect>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="price" class="form-label">Price</label>
+                        <InputNumber  class="form-control" @bind-Value="game.Price" id="price" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="releaseDate" class="form-label">ReleaseDate</label>
+                        <InputDate  class="form-control" @bind-Value="game.ReleaseDate" id="releaseDate" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                    </EditForm>
+        </div>
+        </div>
+}
+@code {
+    [SupplyParameterFromForm]
+private GameDetails game {get; set;} = new()
+{
+    Name = string.Empty,
+    ReleaseDate = DateOnly.FromDateTime(DateTime.UtcNow)
+};
+
+
+private GenresClient genresClient = new();
+private GamesClient gamesClient = new();
+
+private Genre[]? genres;
+
+    protected override void OnInitialized() 
+    {
+        genres = genresClient.GetGenres();
+    }
+
+    private void HandleSubmit()
+    {
+gamesClient.AddGame(game);
+NavigationManager.NavigateTo("/"); //A dependecy Injection that navigates back to the homepage once you are done
+    }
+}
