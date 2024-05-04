@@ -1,5 +1,7 @@
 ﻿@page "/editgame"
 @inject NavigationManager NavigationManager
+@inject GamesClient GamesClient
+@inject GenresClient GenresClient
 
 
 <PageTitle>New game</PageTitle>
@@ -12,10 +14,13 @@
 else {
         <div class="row">
         <div class="col-md-4">
-                    <EditForm Model="@game" FormName="editgame" OnSubmit = "HandleSubmit">
+                    <EditForm Model="@game" FormName="editgame" OnValidSubmit = "HandleSubmit">
+                    <DataAnnotationsValidator/>
+                    <ValidationSummary />
                     <div class="mb-3">
                         <label for="name" class="form-label">Game</label>
                         <InputText  class="form-control" @bind-Value="game.Name" id="name" />
+                        <ValidationMessage For="() => game.Name" />
                     </div>
 
                     <div class="mb-3">
@@ -27,11 +32,13 @@ else {
                             <option value="@genre.Id">@genre.Name</option>
                         }
                         </InputSelect>
+                        <ValidationMessage For="() => game.GenreId" />
                     </div>
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price</label>
                         <InputNumber  class="form-control" @bind-Value="game.Price" id="price" />
+                        <ValidationMessage For="() => game.Price" />
                     </div>
 
                     <div class="mb-3">
@@ -39,6 +46,7 @@ else {
                         <InputDate  class="form-control" @bind-Value="game.ReleaseDate" id="releaseDate" />
                     </div>
                     <button type="submit" class="btn btn-primary">Add</button>
+                     <a role = "button" class="btn btn-secondary" href="/">Cancel</a>
                     </EditForm>
         </div>
         </div>
@@ -52,19 +60,19 @@ private GameDetails game {get; set;} = new()
 };
 
 
-private GenresClient genresClient = new();
-private GamesClient gamesClient = new();
+
+
 
 private Genre[]? genres;
 
     protected override void OnInitialized() 
     {
-        genres = genresClient.GetGenres();
+        genres = GenresClient.GetGenres();
     }
 
     private void HandleSubmit()
     {
-gamesClient.AddGame(game);
+GamesClient.AddGame(game);
 NavigationManager.NavigateTo("/"); //A dependecy Injection that navigates back to the homepage once you are done
     }
 }
