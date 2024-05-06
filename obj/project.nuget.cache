@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tWIrZbd/Dh0U1nPxCOZ47ZEOQv1M1lpNW+bZfpczxt9OBlqkvG4Fhp2WaVA6+iwCsri5bIPgSl4pEO0IUqsoSA==",
+  "dgSpecHash": "HQHkciZa4zLF8m58aQMr4uKEfA/2uPxGvlf3cDYGbPqO9MXae1ndKDyx0037URWjX9RBqOl911DH1969f2FXHg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\GameStore.Frontend.csproj",
+  "projectFilePath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\GameStore.Frontend.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

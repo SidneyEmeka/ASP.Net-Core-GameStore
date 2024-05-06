@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\GameStore.Frontend.csproj": {}
+    "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\GameStore.Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\GameStore.Frontend.csproj": {
+    "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\GameStore.Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\GameStore.Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\GameStore.Frontend.csproj",
         "projectName": "GameStore.Frontend",
-        "projectPath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\GameStore.Frontend.csproj",
+        "projectPath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\GameStore.Frontend.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\gamestore.frontend\\obj\\",
+        "outputPath": "C:\\Users\\USER\\OneDrive\\Documents\\webworld\\git\\.NET Projects\\GameStore\\GameStore.Frontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
